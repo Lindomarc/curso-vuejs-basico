@@ -10,18 +10,11 @@
 <body>
 
     <div id="app" class="container">
-        {{ age }}
-        <button @click="age++">Aumentar</button>
-        <button @click="age--">Diminuir</button>
-
-        <div v-if="age >= 18">
-            maior de idade
-        </div>
-        <div v-else>
-            menor de idade
-        </div>
-        <div v-else>
-
+    <div v-show="created">
+            Criado com sucesso "v-show"
+        </div>        
+        <div v-if="created">
+            Criado com sucesso "v-if"
         </div>
     </div>
 
@@ -30,9 +23,7 @@
         const app = new Vue({
             el:'#app',
             data:{
-                age:0
-            },
-            methods:{  
+                created: false
             }
         });
     </script>
