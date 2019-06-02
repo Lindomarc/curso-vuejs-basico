@@ -11,6 +11,8 @@
 
     <div id="app" class="container">
     https://br.vuejs.org/v2/guide/instance.html
+    <h2>Teste</h2>
+        <div id="teste">teste</div>
     </div>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
@@ -21,7 +23,12 @@
                 console.log('beforeCreate');
             },
             created(){
-                console.log('created');
+                console.log('create não tem acesso ao el');
+                console.log(this.$el);
+
+                const teste = document.querySelector('#teste');
+                console.log('acesso de elemento dentro de el.');
+                console.log(teste);
             },
             
             el:'#app',
@@ -30,7 +37,8 @@
                 console.log('beforeMount');
             },
             mounted(){
-                console.log('mounted');
+                console.log('create  tem acesso ao el');
+                console.log(this.$el);
             },
             beforeUpdate(){
                 console.log('beforeUpdate');
